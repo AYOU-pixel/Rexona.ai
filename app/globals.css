@@ -1,26 +1,121 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --indigo: #6366F1;
+  --indigo-dark: #4F46E5;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+}
+
+body.modal-open {
+  overflow: hidden;
+}
+
+/* ---- Scrollbar ---- */
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #6366f180; border-radius: 99px; }
+
+/* ---- Animated border glow ---- */
+.animated-border {
+  position: relative;
+  overflow: hidden;
+}
+.animated-border::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -30%;
+  width: 30%;
+  height: 100%;
+  background: #6366f1;
+  filter: blur(1.5rem);
+  opacity: 0.7;
+  z-index: 0;
+  pointer-events: none;
+  animation: borderSlide 6s ease-in-out infinite;
+}
+@keyframes borderSlide {
+  0%   { left: -30%; }
+  100% { left: 120%; }
+}
+
+/* ---- Purple glow blobs ---- */
+.glow-blob {
+  background: linear-gradient(90deg, #7e22ce91 8%, #625aafae 31%, #7badbbbc 76%, #54d2d0ca 89%);
+  filter: blur(60px);
+  opacity: 0.45;
+  border-radius: 9999px;
+}
+
+/* ---- Fade-up animation ---- */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ---- Stagger delays ---- */
+.delay-1 { transition-delay: 0.1s; }
+.delay-2 { transition-delay: 0.2s; }
+.delay-3 { transition-delay: 0.3s; }
+.delay-4 { transition-delay: 0.4s; }
+.delay-5 { transition-delay: 0.5s; }
+
+/* ---- FAQ accordion ---- */
+.faq-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, padding 0.4s ease;
+  padding: 0 18px;
+}
+.faq-content.open {
+  max-height: 300px;
+  padding: 16px 18px;
+}
+
+/* ---- Carousel ---- */
+.carousel-track {
+  display: flex;
+  animation: scrollLeft 20s linear infinite;
+  width: max-content;
+}
+@keyframes scrollLeft {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* ---- Dashboard perspective ---- */
+.dashboard-perspective {
+  transform: perspective(1200px) translateY(12px) scale(0.85) rotateX(18deg);
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.dashboard-perspective.flat {
+  transform: perspective(1200px) translateY(0) scale(1) rotateX(0deg);
+}
+
+/* ---- Gradient text ---- */
+.gradient-text {
+  background: linear-gradient(135deg, #6366F1 0%, #8b5cf6 50%, #06b6d4 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ---- Hero grid background ---- */
+.hero-grid {
+  background-image:
+    linear-gradient(rgba(99,102,241,0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(99,102,241,0.07) 1px, transparent 1px);
+  background-size: 40px 40px;
 }
