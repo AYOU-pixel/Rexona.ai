@@ -14,10 +14,8 @@ export default function Footer() {
           {/* Brand */}
           <div className="lg:w-64 shrink-0">
             <Link href="/" className="flex items-center gap-2 mb-4">
-              <div className="w-8 h-8 rounded-lg bg-indigo-500 flex items-center justify-center">
-                <span className="text-white font-display font-bold">P</span>
-              </div>
-              <span className="font-display font-bold text-xl uppercase tracking-wide">Pixa</span>
+              <img src="/logo.png" alt="Pixa logo" className="w-8 h-8 rounded-lg object-cover" />
+              <span className="font-display font-bold text-xl uppercase tracking-wide">Rexona</span>
             </Link>
             <p className="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed max-w-[200px] mb-6">
               The AI workspace for people who build things.

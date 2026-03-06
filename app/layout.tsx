@@ -22,20 +22,19 @@ const dmSerif = DM_Serif_Display({
 });
 
 export const metadata: Metadata = {
-  title: "Pixa — All Your AI Models in One Playground",
+  title: "Rexona — All Your AI Models in One Playground",
   description:
     "Access GPT-4o, Claude, Gemini, Llama and more in a single unified interface. Generate images, code, PDFs, music and video — powered by Pixa's cutting-edge API.",
   keywords: ["AI playground", "GPT-4o", "Claude", "Gemini", "AI tools", "LLM", "image generation", "Pixa"],
   authors: [{ name: "Pixa" }],
   openGraph: {
-    title: "Pixa — All Your AI Models in One Playground",
+    title: "Rexona — All Your AI Models in One Playground",
     description: "One subscription. Every frontier AI model. Unlimited potential.",
     type: "website",
-    url: "https://pixa.ai",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Pixa — All Your AI Models in One Playground",
+    title: "Rexona — All Your AI Models in One Playground",
     description: "One subscription. Every frontier AI model. Unlimited potential.",
   },
 };
@@ -45,6 +44,10 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        {/* Favicon */}
+        <link rel="icon" href="/logo.png" type="image/png" />
+      </head>
       <body
         className={`${dmSans.variable} ${syne.variable} ${dmSerif.variable} font-sans bg-white dark:bg-black text-black dark:text-white antialiased`}
       >

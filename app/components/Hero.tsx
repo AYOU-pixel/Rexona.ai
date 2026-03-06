@@ -131,7 +131,7 @@ export default function Hero() {
               <iframe
                 className="w-full h-full"
                 src="https://www.youtube.com/embed/kT8JyzNE-dI?si=krS8zHVJy4JzSaEJ&controls=0&rel=0&showinfo=0"
-                title="Pixa demo"
+                title="Rexona demo"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
               />

@@ -60,10 +60,8 @@ export default function PlaygroundPreview({ typedText }: Props) {
         <aside className="hidden lg:flex w-[220px] shrink-0 flex-col bg-zinc-50 dark:bg-zinc-900 border-r border-zinc-100 dark:border-zinc-800 p-3 gap-2">
           {/* Logo */}
           <div className="flex items-center gap-2 px-2 py-1 mb-2">
-            <div className="w-5 h-5 rounded bg-indigo-500 flex items-center justify-center">
-              <span className="text-white text-[10px] font-bold">P</span>
-            </div>
-            <span className="font-display font-bold text-sm uppercase tracking-wide">Pixa</span>
+            <img src="/logo.png" alt="Rexona logo" className="w-5 h-5 rounded object-cover" />
+            <span className="font-display font-bold text-sm uppercase tracking-wide">Rexona</span>
           </div>
 
           {/* Tool list */}
